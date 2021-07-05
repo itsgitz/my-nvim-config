@@ -11,6 +11,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'mattn/emmet-vim'
+  Plug 'ekalinin/Dockerfile.vim'
 call plug#end()"Config Section
 
 " Config Section
@@ -75,6 +77,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_auto_type_info = 1
+
+let g:user_emmet_leader_key='<C-Z>'
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
