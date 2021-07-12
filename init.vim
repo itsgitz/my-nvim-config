@@ -112,3 +112,8 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+augroup CustomCursorLine
+au!    
+au VimEnter * :hi! CursorLine gui=underline cterm=underline
+augroup END
