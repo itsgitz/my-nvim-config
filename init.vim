@@ -33,6 +33,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set cursorline
 colorscheme onedark
 
 let g:airline_theme='onedark'
