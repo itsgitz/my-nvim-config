@@ -1,4 +1,5 @@
-"languageserver": {
+{
+  "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
@@ -7,4 +8,5 @@
         "usePlaceholders": true
       }
     }
+  }
 }
