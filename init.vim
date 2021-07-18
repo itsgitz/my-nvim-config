@@ -21,6 +21,7 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+syntax on
 syntax enable
 set number relativenumber
 set hidden
