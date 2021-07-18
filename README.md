@@ -5,7 +5,7 @@
   $ init.vim # main nvim configuration)
   ```
 
-2. COC Plugins for autocompletion for VIM/NVIM
+2. COC Plugins for autocompletion on VIM/NVIM
 
   ```sh
   $ coc-settings.json # nodejs extension host for vim and host language servers
