@@ -15,6 +15,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'gosukiwi/vim-atom-dark'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'vim-ruby/vim-ruby'
+  Plug '2072/PHP-Indenting-for-VIm'
 call plug#end()"Config Section
 
 " Config Section
@@ -23,6 +25,7 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+filetype plugin on
 syntax on
 syntax enable
 set number relativenumber
@@ -87,6 +90,14 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:rehash256 = 1
+
+" PHP Configuration
+"
+let php_sql_query = 1
+let php_htmlInStrings = 1
+let php_baselib = 1
+let php_oldStyle = 1
+let php_noShortTags = 1
 
 let g:user_emmet_leader_key='<C-Z>'
 
