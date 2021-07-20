@@ -31,7 +31,7 @@ set nobackup
 set nowritebackup
 set cmdheight=2
 set updatetime=300
-set colorcolumn=90
+" set colorcolumn=90
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -39,9 +39,9 @@ set expandtab
 set cursorline
 let g:onedark_terminal_italics=1
 
-colorscheme onedark
+colorscheme dracula
 
-let g:airline_theme='onedark'
+let g:airline_theme='dracula'
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
@@ -83,6 +83,10 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_auto_type_info = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:rehash256 = 1
 
 let g:user_emmet_leader_key='<C-Z>'
 
