@@ -13,6 +13,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'vim-airline/vim-airline-themes'
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
+  Plug 'gosukiwi/vim-atom-dark'
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()"Config Section
 
 " Config Section
