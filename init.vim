@@ -40,7 +40,18 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set cursorline
+
+" onedark theme configuration
 let g:onedark_terminal_italics=1
+
+" dracula theme configuration
+"
+" let g:dracula_bold = 1
+" let g:dracula_italic = 1
+" let g:dracula_underline = 1
+" let g:dracula_undercurl = 1
+" let g:dracula_inverse = 1
+" let g:dracula_colorterm = 1
 
 colorscheme dracula
 
@@ -98,6 +109,12 @@ let php_htmlInStrings = 1
 let php_baselib = 1
 let php_oldStyle = 1
 let php_noShortTags = 1
+let php_parent_error_close = 1
+let php_parent_error_open = 1
+
+" Plaintext Configuration
+"
+let g:plaintex_delimiters = 1
 
 let g:user_emmet_leader_key='<C-Z>'
 
