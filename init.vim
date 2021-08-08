@@ -25,7 +25,7 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-filetype plugin on
+filetype plugin indent on
 syntax on
 syntax enable
 set number relativenumber
@@ -35,10 +35,18 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 " set colorcolumn=90
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set expandtab
+
+au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+au FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+au FileType go setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+
 set cursorline
 
 " onedark theme configuration
@@ -116,7 +124,7 @@ let php_parent_error_open = 1
 "
 let g:plaintex_delimiters = 1
 
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<C-C>'
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
