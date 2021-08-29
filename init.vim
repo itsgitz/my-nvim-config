@@ -46,6 +46,7 @@ au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType go setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+aut FileType toml setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 
 set cursorline
 
