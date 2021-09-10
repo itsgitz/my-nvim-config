@@ -48,6 +48,7 @@ au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType go setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 au FileType toml setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 au FileType markdown setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
+au FileType yaml setlocal shiftwidth=3 softtabstop=3 tabstop=3 noexpandtab
 
 set cursorline
 
