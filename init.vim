@@ -14,9 +14,9 @@ call plug#begin("~/.vim/plugged")
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'gosukiwi/vim-atom-dark'
-  Plug 'arcticicestudio/nord-vim'
   Plug 'vim-ruby/vim-ruby'
   Plug '2072/PHP-Indenting-for-VIm'
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()"Config Section
 
 " Config Section
@@ -67,7 +67,7 @@ let g:onedark_terminal_italics=1
 
 colorscheme dracula
 
-let g:airline_theme='dracula'
+let g:airline_theme='nord'
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
