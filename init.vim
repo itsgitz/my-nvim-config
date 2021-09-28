@@ -17,6 +17,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'vim-ruby/vim-ruby'
   Plug '2072/PHP-Indenting-for-VIm'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'tpope/vim-rails'
 call plug#end()"Config Section
 
 " Config Section
@@ -26,6 +27,8 @@ if (has("termguicolors"))
 endif
 
 filetype plugin indent on
+filetype on
+filetype indent on
 syntax on
 syntax enable
 set number relativenumber
