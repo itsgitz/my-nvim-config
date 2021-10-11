@@ -131,7 +131,7 @@ let php_parent_error_open = 1
 "
 let g:plaintex_delimiters = 1
 
-let g:user_emmet_leader_key='<C-C>'
+" let g:user_emmet_leader_key='<C-C>'
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
