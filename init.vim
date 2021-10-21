@@ -18,9 +18,9 @@ call plug#begin("~/.vim/plugged")
   Plug '2072/PHP-Indenting-for-VIm'
   Plug 'arcticicestudio/nord-vim'
   Plug 'tpope/vim-rails'
-call plug#end()"Config Section
+call plug#end()
 
-" Config Section
+"Config Section
 
 if (has("termguicolors"))
  set termguicolors
@@ -45,7 +45,8 @@ set updatetime=300
 " set expandtab
 
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-au FileType css setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+au FileType css setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab 
+au FileType css let b:coc_suggest_disable = 1 
 au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
@@ -105,7 +106,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
 " VIM Go Configuration
 let g:go_highlight_types = 1
