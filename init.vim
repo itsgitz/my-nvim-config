@@ -45,6 +45,7 @@ set updatetime=300
 " set expandtab
 
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+au FileType css setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
