@@ -18,6 +18,7 @@ call plug#begin("~/.vim/plugged")
   Plug '2072/PHP-Indenting-for-VIm'
   Plug 'arcticicestudio/nord-vim'
   Plug 'tpope/vim-rails'
+  Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 "Config Section
