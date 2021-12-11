@@ -178,3 +178,6 @@ augroup CustomCursorLine
 au!    
 au VimEnter * :hi! CursorLine gui=underline cterm=underline
 augroup END
+
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
