@@ -56,6 +56,7 @@ au FileType css let b:coc_suggest_disable = 1
 au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+au FileType typescript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType go setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 au FileType toml setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 au FileType markdown setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
