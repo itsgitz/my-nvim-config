@@ -42,7 +42,7 @@ set nobackup
 set nowritebackup
 set cmdheight=2
 set updatetime=300
-set colorcolumn=85
+" set colorcolumn=85
 
 " set tabstop=2
 " set shiftwidth=2
