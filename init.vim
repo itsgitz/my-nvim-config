@@ -5,9 +5,9 @@ call plug#begin("~/.vim/plugged")
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
   Plug 'maxmellon/vim-jsx-pretty'
@@ -23,6 +23,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'arcticicestudio/nord-vim'
   Plug 'tpope/vim-rails'
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 "Config Section
@@ -51,19 +52,22 @@ set updatetime=300
 
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType css setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab 
-au FileType css let b:coc_suggest_disable = 1 
 au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType typescript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+au FileType typescriptreact setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType go setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 au FileType toml setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 au FileType markdown setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 au FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType json setlocal shiftwidth=3 softtabstop=3 tabstop=3 noexpandtab
 au BufRead,BufNewFile *.tpl set filetype=html
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 set cursorline
+
+let g:vim_jsx_pretty_highlight_close_tag = 1
 
 " onedark theme configuration
 let g:onedark_terminal_italics=1
@@ -181,3 +185,34 @@ augroup END
 
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+"
+" Typescript React Configuration
+" dark red
+hi tsxTagName guifg=#E06C75
+hi tsxComponentName guifg=#E06C75
+hi tsxCloseComponentName guifg=#E06C75
+
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxCloseTagName guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
+
+" light-grey
+hi tsxTypeBraces guifg=#999999
+" dark-grey
+hi tsxTypes guifg=#666666
+
+hi ReactState guifg=#C176A7
+hi ReactProps guifg=#D19A66
+hi ApolloGraphQL guifg=#CB886B
+hi Events ctermfg=204 guifg=#56B6C2
+hi ReduxKeywords ctermfg=204 guifg=#C678DD
+hi ReduxHooksKeywords ctermfg=204 guifg=#C176A7
+hi WebBrowser ctermfg=204 guifg=#56B6C2
+hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
