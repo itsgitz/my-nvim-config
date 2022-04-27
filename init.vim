@@ -43,6 +43,9 @@ set nobackup
 set nowritebackup
 set cmdheight=2
 set updatetime=300
+set showcmd
+set showmatch
+set clipboard=unamed
 " set colorcolumn=85
 
 " set tabstop=2
