@@ -45,7 +45,7 @@ set cmdheight=2
 set updatetime=300
 set showcmd
 set showmatch
-set clipboard=unamed
+set clipboard=unnamed
 " set colorcolumn=85
 
 " set tabstop=2
