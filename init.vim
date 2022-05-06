@@ -24,6 +24,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-rails'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 "Config Section
