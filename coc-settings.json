@@ -7,8 +7,16 @@
 			"initializationOptions": {
 				"usePlaceholders": true
 			}
-		}	
+		},
+		"intelephense": {
+			"command": "intelephense",
+			"args": ["--stdio"],
+			"filetypes": ["php"],
+			"initializationOptions": {
+				"storagePath": "/tmp/intelephense"
+			}
+		}
 	},
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true
+	"python.linting.pylintEnabled": true,
+	"python.linting.enabled": true
 }
