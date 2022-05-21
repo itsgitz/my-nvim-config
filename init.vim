@@ -68,6 +68,7 @@ au FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType json setlocal shiftwidth=3 softtabstop=3 tabstop=3 noexpandtab
 au BufRead,BufNewFile *.tpl set filetype=html
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd BufNewFile,BufRead, *.blade.php set filetype=html
 
 set cursorline
 
