@@ -54,6 +54,7 @@ set clipboard=unnamed
 " set softtabstop=2
 " set expandtab
 
+au FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType css setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab 
 au FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
