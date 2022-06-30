@@ -7,7 +7,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
+  " Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
   Plug 'maxmellon/vim-jsx-pretty'
@@ -74,6 +74,9 @@ autocmd BufNewFile,BufRead, *.blade.php set filetype=html
 set cursorline
 
 let g:vim_jsx_pretty_highlight_close_tag = 1
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
 
 " onedark theme configuration
 let g:onedark_terminal_italics=1
