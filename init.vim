@@ -15,6 +15,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'jparise/vim-graphql'
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'gosukiwi/vim-atom-dark'
@@ -70,6 +71,7 @@ au FileType json setlocal shiftwidth=3 softtabstop=3 tabstop=3 noexpandtab
 au BufRead,BufNewFile *.tpl set filetype=html
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd BufNewFile,BufRead, *.blade.php set filetype=html
+autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 set cursorline
 
@@ -77,9 +79,10 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:typescript_indent_disable = 1
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
+let g:typescript_ignore_browserwords = 0
 
 " onedark theme configuration
-let g:onedark_terminal_italics=1
+" let g:onedark_terminal_italics=1
 
 " dracula theme configuration
 "
