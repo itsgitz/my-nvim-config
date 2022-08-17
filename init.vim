@@ -72,6 +72,7 @@ au BufRead,BufNewFile *.tpl set filetype=html
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd BufNewFile,BufRead, *.blade.php set filetype=html
 autocmd BufNewFile,BufRead *.ejs set filetype=html
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
 set cursorline
 
@@ -151,6 +152,9 @@ let php_oldStyle = 1
 let php_noShortTags = 1
 let php_parent_error_close = 1
 let php_parent_error_open = 1
+
+" JavaScript configuration
+let g:javascript_plugin_flow = 1
 
 " Plaintext Configuration
 "
