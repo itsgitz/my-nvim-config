@@ -152,7 +152,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-let g:coc_global_extensions = ['coc-emmet', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-css', 'coc-solargraph', 'coc-sql']
 
 " VIM Go Configuration
 let g:go_highlight_types = 1
