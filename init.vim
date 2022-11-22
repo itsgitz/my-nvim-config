@@ -51,10 +51,10 @@ set showmatch
 set clipboard=unnamed
 " set colorcolumn=85
 
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
-" set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 au FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
@@ -70,6 +70,7 @@ au FileType markdown setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 au FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType xml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 au FileType json setlocal shiftwidth=3 softtabstop=3 tabstop=3 noexpandtab
+au FileType sh setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 au BufRead,BufNewFile *.tpl set filetype=html
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd BufNewFile,BufRead, *.blade.php set filetype=html
