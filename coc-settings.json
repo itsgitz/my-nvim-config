@@ -18,5 +18,7 @@
 		}
 	},
 	"python.linting.pylintEnabled": true,
-	"python.linting.enabled": true
+	"python.linting.enabled": true,
+	"tsserver.log": "off",
+	"tsserver.trace.server": "off"
 }
