@@ -20,6 +20,5 @@
 	"python.linting.pylintEnabled": true,
 	"python.linting.enabled": true,
 	"tsserver.log": "off",
-	"tsserver.trace.server": "off",
-	"tsserver.tsdk": "/usr/bin/tsserver"
+	"tsserver.trace.server": "off"
 }
