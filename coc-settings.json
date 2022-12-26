@@ -20,5 +20,8 @@
 	"python.linting.pylintEnabled": true,
 	"python.linting.enabled": true,
 	"tsserver.log": "off",
-	"tsserver.trace.server": "off"
+	"tsserver.trace.server": "off",
+	"workspace.workspaceFolderCheckCwd": false,
+	"tsserver.formatOnType": true,
+	"coc.preferences.formatOnType": true
 }

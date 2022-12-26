@@ -48,7 +48,7 @@ set updatetime=300
 set showcmd
 set showmatch
 set clipboard=unnamed
-" set colorcolumn=85
+set colorcolumn=85
 
 set tabstop=4
 set shiftwidth=4
