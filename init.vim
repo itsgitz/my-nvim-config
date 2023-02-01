@@ -49,6 +49,18 @@ set showcmd
 set showmatch
 set clipboard=unnamed
 set colorcolumn=80
+set autoread
+set wildmenu
+set so=7
+set hid
+set ignorecase
+set incsearch
+set lazyredraw
+set magic
+set smarttab
+set ai
+set si
+set wrap
 
 set tabstop=4
 set shiftwidth=4
