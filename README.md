@@ -16,4 +16,8 @@
   ```sh
   $ coc-settings.json # nodejs extension host for vim and host language servers
   ```
+4. Install the intelephense
 
+	```sh
+	npm i intelephense -g
+	```
