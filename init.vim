@@ -26,6 +26,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'tpope/vim-surround'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "Config Section
