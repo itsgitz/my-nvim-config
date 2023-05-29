@@ -21,7 +21,6 @@
 	"tsserver.trace.server": "off",
 	"workspace.workspaceFolderCheckCwd": false,
 	"coc.preferences.formatOnType": true,
-	"python.analysis.useLibraryCodeForTypes": false,
 	"pyright.inlayHints.functionReturnTypes": false,
 	"pyright.inlayHints.variableTypes": false
 }
