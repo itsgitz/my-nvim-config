@@ -22,5 +22,6 @@
 	"workspace.workspaceFolderCheckCwd": false,
 	"coc.preferences.formatOnType": true,
 	"pyright.inlayHints.functionReturnTypes": false,
-	"pyright.inlayHints.variableTypes": false
+	"pyright.inlayHints.variableTypes": false,
+	"pyright.disableDiagnostics": true
 }
