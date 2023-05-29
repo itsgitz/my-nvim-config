@@ -17,11 +17,11 @@
 			}
 		}
 	},
-	"python.linting.pylintEnabled": true,
-	"python.linting.enabled": true,
 	"tsserver.log": "off",
 	"tsserver.trace.server": "off",
 	"workspace.workspaceFolderCheckCwd": false,
-	"tsserver.formatOnType": true,
-	"coc.preferences.formatOnType": true
+	"coc.preferences.formatOnType": true,
+	"python.analysis.useLibraryCodeForTypes": false,
+	"pyright.inlayHints.functionReturnTypes": false,
+	"pyright.inlayHints.variableTypes": false
 }
