@@ -41,7 +41,8 @@ filetype on
 filetype indent on
 syntax on
 syntax enable
-set number relativenumber
+" set number relativenumber
+set number
 set hidden
 set nobackup
 set nowritebackup
