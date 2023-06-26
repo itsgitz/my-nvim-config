@@ -1,7 +1,6 @@
 call plug#begin("~/.vim/plugged")
   " Plugin Section
-  Plug 'dracula/vim'
-  Plug 'joshdick/onedark.vim'
+  Plug 'dracula/vim' 
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -18,9 +17,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'gosukiwi/vim-atom-dark'
-  Plug 'vim-ruby/vim-ruby'
-  Plug '2072/PHP-Indenting-for-VIm'
-  Plug 'arcticicestudio/nord-vim'
+  Plug 'vim-ruby/vim-ruby' 
   Plug 'tpope/vim-rails'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -28,7 +25,10 @@ call plug#begin("~/.vim/plugged")
   Plug 'neovim/nvim-lspconfig'
   Plug 'tpope/vim-fugitive'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-  Plug 'nvim-telescope/telescope.nvim'
+  "Plug 'nvim-telescope/telescope.nvim'
+  "Plug 'joshdick/onedark.vim' 
+  "Plug '2072/PHP-Indenting-for-VIm'
+  "Plug 'arcticicestudio/nord-vim' 
 call plug#end()
 
 "Config Section
