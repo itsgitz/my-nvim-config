@@ -70,6 +70,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set splitbelow
+set splitright
 
 au FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
@@ -207,7 +209,7 @@ let g:rehash256 = 1
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
-let php_oldStyle = 1
+" let php_oldStyle = 1
 let php_noShortTags = 1
 let php_parent_error_close = 1
 let php_parent_error_open = 1
@@ -230,18 +232,18 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 autocmd FileType apache setlocal commentstring=#\ %s
 
 " open new split panes to right and below
-set splitright
-set splitbelow
-" turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
-" start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-" open terminal on ctrl+n
-function! OpenTerminal()
-  split term://bash
-  resize 10
-endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
+" set splitright
+" set splitbelow
+" " turn terminal to normal mode with escape
+" tnoremap <Esc> <C-\><C-n>
+" " start terminal in insert mode
+" au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" " open terminal on ctrl+n
+" function! OpenTerminal()
+"   split term://bash
+"   resize 10
+" endfunction
+" nnoremap <c-n> :call OpenTerminal()<CR>
 
 
 " use alt+hjkl to move between split/vsplit panels
