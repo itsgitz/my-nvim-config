@@ -13,18 +13,18 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'jparise/vim-graphql'
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
-  Plug 'gosukiwi/vim-atom-dark'
-  Plug 'vim-ruby/vim-ruby' 
-  Plug 'tpope/vim-rails'
+  " Plug 'gosukiwi/vim-atom-dark'
+  " Plug 'vim-ruby/vim-ruby' 
+  " Plug 'tpope/vim-rails'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'tpope/vim-surround'
   Plug 'neovim/nvim-lspconfig'
   Plug 'tpope/vim-fugitive'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  Plug 'norcalli/nvim-colorizer.lua'
   "Plug 'nvim-telescope/telescope.nvim'
   "Plug 'joshdick/onedark.vim' 
   "Plug '2072/PHP-Indenting-for-VIm'
@@ -36,6 +36,8 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
+
+lua require'colorizer'.setup()
 
 filetype plugin indent on
 filetype on
@@ -209,7 +211,7 @@ let g:rehash256 = 1
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
-" let php_oldStyle = 1
+let php_oldStyle = 1
 let php_noShortTags = 1
 let php_parent_error_close = 1
 let php_parent_error_open = 1
