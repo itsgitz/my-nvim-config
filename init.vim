@@ -29,6 +29,9 @@ call plug#begin("~/.vim/plugged")
   "Plug 'joshdick/onedark.vim' 
   "Plug '2072/PHP-Indenting-for-VIm'
   "Plug 'arcticicestudio/nord-vim' 
+  "Plug
+  "
+  Plug 'szw/vim-maximizer'
 call plug#end()
 
 "Config Section
