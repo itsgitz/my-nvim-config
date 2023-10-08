@@ -1,3 +1,6 @@
+-- Neovim LSP client documentation reference: 
+--  https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+
 require'colorizer'.setup()
 
 local has_words_before = function()
@@ -86,6 +89,59 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- Golang
 require'lspconfig'.gopls.setup{
     capabilities = capabilities
 }
+-- Golang
+
+-- Bash
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sh',
+  callback = function()
+    vim.lsp.start({
+      name = 'bash-language-server',
+      cmd = { 'bash-language-server', 'start' },
+    })
+  end,
+})
+-- Bash
+
+-- JavaScript
+require('lspconfig/quick_lint_js').setup {}
+-- JavaScript
+
+-- TypeScript
+require'lspconfig'.tsserver.setup{}
+-- TypeScript
+
+-- Python
+require'lspconfig'.pyright.setup{}
+-- Python
+
+-- Emmet
+require'lspconfig'.emmet_ls.setup{}
+-- Emmet
+
+-- CSS
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+-- CSS
+
+-- Vue.js
+require'lspconfig'.vuels.setup{}
+-- Vue.js
+
+-- JSON
+require'lspconfig'.jsonls.setup{}
+-- JSON
+
+-- Docker
+require'lspconfig'.dockerls.setup{}
+-- Docker
+
+-- Docker Compose
+require'lspconfig'.docker_compose_language_service.setup{}
+-- Docker Compose

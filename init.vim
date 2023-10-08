@@ -13,7 +13,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'mattn/emmet-vim'
+  " Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -52,6 +52,8 @@ call plug#begin("~/.vim/plugged")
   "
   " nvim-cmp plugins
   "
+
+  Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '2.16.0'}
 call plug#end()
 
 "Config Section
@@ -185,7 +187,7 @@ let g:javascript_plugin_flow = 1
 let g:plaintex_delimiters = 1
 
 " Emmet configuration
-let g:user_emmet_leader_key='<C-C>'
+" let g:user_emmet_leader_key='<C-C>'
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
