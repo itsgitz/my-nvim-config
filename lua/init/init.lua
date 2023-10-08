@@ -145,3 +145,7 @@ require'lspconfig'.dockerls.setup{}
 -- Docker Compose
 require'lspconfig'.docker_compose_language_service.setup{}
 -- Docker Compose
+
+-- PHP
+require'lspconfig'.phpactor.setup{} 
+-- PHP

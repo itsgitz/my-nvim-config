@@ -16,9 +16,8 @@ call plug#begin("~/.vim/plugged")
   " Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'tpope/vim-surround'
-  Plug 'neovim/nvim-lspconfig'
   Plug 'tpope/vim-fugitive'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'norcalli/nvim-colorizer.lua'
