@@ -149,3 +149,11 @@ require'lspconfig'.docker_compose_language_service.setup{}
 -- PHP
 require'lspconfig'.phpactor.setup{} 
 -- PHP
+
+-- Angular
+require'lspconfig'.angularls.setup{}
+-- Angular
+
+-- HTML
+require'lspconfig'.html.setup{}
+-- HTML
