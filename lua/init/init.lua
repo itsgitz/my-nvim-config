@@ -9,6 +9,9 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
+vim.lsp.buf.hover()
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 local cmp = require'cmp'
 cmp.setup({
     snippet = {
@@ -51,8 +54,11 @@ cmp.setup({
         end,
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
+        { name = 'path' },
+        { name = 'nvim_lsp', keyword_length = 1 },
         { name = 'vsnip' }, -- For vsnip users.
+        { name = 'buffer', keyword_length = 3 },
+        { name = 'luasnip', keyword_length = 2 },
     }, {
         { name = 'buffer' },
     })
@@ -135,9 +141,6 @@ local util = require 'lspconfig.util'
 local function get_typescript_server_path(root_dir)
 
   local global_ts = '~/.local/lib/node_modules/typescript/lib'
-  
-  -- Alternative location if installed as root:
-  -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
   local found_ts = ''
   local function check_dir(path)
     found_ts =  util.path.join(path, 'node_modules', 'typescript', 'lib')
@@ -156,7 +159,6 @@ require'lspconfig'.volar.setup{
   on_new_config = function(new_config, new_root_dir)
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
   end,
-  capabilities = capabilities
 }
 -- Vue.js
 

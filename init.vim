@@ -36,6 +36,7 @@ call plug#begin("~/.vim/plugged")
   " For vsnip users.
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/vim-vsnip-integ'
 
   " For luasnip users.
   Plug 'L3MON4D3/LuaSnip'
@@ -52,6 +53,7 @@ call plug#begin("~/.vim/plugged")
   " nvim-cmp plugins
   "
   Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '2.16.0'}
+  Plug 'posva/vim-vue'
 call plug#end()
 
 "Config Section
@@ -121,12 +123,6 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 set cursorline
 
-let g:vim_jsx_pretty_highlight_close_tag = 0
-let g:typescript_indent_disable = 1
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-let g:typescript_ignore_browserwords = 0
-
 " onedark theme configuration
 " let g:onedark_terminal_italics=1
 
@@ -142,7 +138,6 @@ let g:typescript_ignore_browserwords = 0
 colorscheme dracula
 
 let g:airline_theme='dracula'
-" lua require('lspconfig')
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
@@ -179,10 +174,16 @@ let php_parent_error_open = 1
 
 " JavaScript configuration
 let g:javascript_plugin_flow = 1
+let g:javascript_plugin_jsdoc = 1
 
 " Plaintext Configuration
 "
 let g:plaintex_delimiters = 1
+
+let g:vim_jsx_pretty_highlight_close_tag = 0
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
 
 " Emmet configuration
 " let g:user_emmet_leader_key='<C-C>'
