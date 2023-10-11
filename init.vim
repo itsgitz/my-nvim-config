@@ -54,6 +54,8 @@ call plug#begin("~/.vim/plugged")
   "
   Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '2.16.0'}
   Plug 'posva/vim-vue'
+
+  Plug 'vim-crystal/vim-crystal'
 call plug#end()
 
 "Config Section
