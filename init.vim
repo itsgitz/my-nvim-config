@@ -2,7 +2,7 @@ call plug#begin("~/.vim/plugged")
   " Plugin Section
   Plug 'neovim/nvim-lspconfig'
   Plug 'dracula/vim' 
-  Plug 'scrooloose/nerdtree'
+  Plug 'preservim/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   " Plug 'nvim-tree/nvim-web-devicons'
   Plug 'pangloss/vim-javascript'
