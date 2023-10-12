@@ -9,6 +9,17 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
+local on_attach = function(client, bufnr)
+  -- format on save
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = vim.api.nvim_create_augroup("Format", { clear = true }),
+      buffer = bufnr,
+      callback = function() vim.lsp.buf.formatting_seq_sync() end
+    })
+  end
+end
+
 vim.lsp.buf.hover()
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
@@ -17,7 +28,8 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {
@@ -29,11 +41,14 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ['<C-Space>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-        },
+        ['<CR>'] = cmp.mapping.confirm({ 
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true 
+        }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        -- ['<C-Space>'] = cmp.mapping.confirm {
+        --     behavior = cmp.ConfirmBehavior.Insert,
+        --     select = true,
+        -- },
         ['<Tab>'] = function(fallback)
             if not cmp.select_next_item() then
                 if vim.bo.buftype ~= 'prompt' and has_words_before() then
@@ -114,12 +129,19 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 -- Bash
 
+-- Lua
+require'lspconfig'.luau_lsp.setup{}
+-- Lua
+
 -- JavaScript
 require('lspconfig/quick_lint_js').setup {}
 -- JavaScript
 
 -- TypeScript
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.tsserver.setup{
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 -- TypeScript
 
 -- Python
@@ -175,7 +197,8 @@ require'lspconfig'.docker_compose_language_service.setup{}
 -- Docker Compose
 
 -- PHP
-require'lspconfig'.phpactor.setup{} 
+-- require'lspconfig'.phpactor.setup{} 
+require'lspconfig'.intelephense.setup{}
 -- PHP
 
 -- Angular
@@ -183,5 +206,39 @@ require'lspconfig'.angularls.setup{}
 -- Angular
 
 -- HTML
-require'lspconfig'.html.setup{}
+require'lspconfig'.html.setup{
+    capabilities = capabilities
+}
 -- HTML
+
+local status, ts = pcall(require, "nvim-treesitter.configs")
+if (not status) then return end
+
+ts.setup {
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = true,
+    disable = {},
+  },
+  ensure_installed = {
+    "tsx",
+    "toml",
+    "fish",
+    "php",
+    "json",
+    "yaml",
+    "swift",
+    "css",
+    "html",
+    "lua"
+  },
+  autotag = {
+    enable = true,
+  },
+}
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }

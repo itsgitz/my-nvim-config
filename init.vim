@@ -4,6 +4,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'dracula/vim' 
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
+  " Plug 'nvim-tree/nvim-web-devicons'
   Plug 'pangloss/vim-javascript'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -53,9 +54,10 @@ call plug#begin("~/.vim/plugged")
   " nvim-cmp plugins
   "
   Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '2.16.0'}
-  Plug 'posva/vim-vue'
+  " Plug 'posva/vim-vuePlug'
 
   Plug 'vim-crystal/vim-crystal'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "Config Section
