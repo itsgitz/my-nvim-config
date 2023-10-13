@@ -9,16 +9,16 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
-local on_attach = function(client, bufnr)
-  -- format on save
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = vim.api.nvim_create_augroup("Format", { clear = true }),
-      buffer = bufnr,
-      callback = function() vim.lsp.buf.formatting_seq_sync() end
-    })
-  end
-end
+-- local on_attach = function(client, bufnr)
+--   -- format on save
+--   if client.server_capabilities.documentFormattingProvider then
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       group = vim.api.nvim_create_augroup("Format", { clear = true }),
+--       buffer = bufnr,
+--       callback = function() vim.lsp.buf.formatting_seq_sync() end
+--     })
+--   end
+-- end
 
 vim.lsp.buf.hover()
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
@@ -74,8 +74,6 @@ cmp.setup({
         { name = 'vsnip' }, -- For vsnip users.
         { name = 'buffer', keyword_length = 3 },
         { name = 'luasnip', keyword_length = 2 },
-    }, {
-        { name = 'buffer' },
     })
 })
 
@@ -138,10 +136,7 @@ require('lspconfig/quick_lint_js').setup {}
 -- JavaScript
 
 -- TypeScript
-require'lspconfig'.tsserver.setup{
-    on_attach = on_attach,
-    capabilities = capabilities
-}
+require'lspconfig'.tsserver.setup{}
 -- TypeScript
 
 -- Python
@@ -242,3 +237,20 @@ ts.setup {
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+
+local status, saga = pcall(require, "lspsaga")
+if (not status) then return end
+
+saga.setup {
+  server_filetype_map = {
+    typescript = 'typescript'
+  }
+}
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
+vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)

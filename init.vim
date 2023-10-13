@@ -58,6 +58,7 @@ call plug#begin("~/.vim/plugged")
 
   Plug 'vim-crystal/vim-crystal'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvimdev/lspsaga.nvim'
 call plug#end()
 
 "Config Section
