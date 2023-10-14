@@ -59,8 +59,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'vim-crystal/vim-crystal'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvimdev/lspsaga.nvim'
-  Plug 'jose-elias-alvarez/null-ls.nvim'
-  Plug 'MunifTanjim/prettier.nvim'
+  "Plug 'jose-elias-alvarez/null-ls.nvim'
+  "Plug 'MunifTanjim/prettier.nvim'
   Plug 'dinhhuy258/git.nvim'
   Plug 'lewis6991/gitsigns.nvim'
 call plug#end()

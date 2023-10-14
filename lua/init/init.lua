@@ -116,11 +116,15 @@ vim.api.nvim_create_autocmd('FileType', {
 -- Bash
 
 -- Lua
-require'lspconfig'.luau_lsp.setup{}
+require'lspconfig'.luau_lsp.setup{
+    capabilities = capabilities
+}
 -- Lua
 
 -- JavaScript
-require('lspconfig/quick_lint_js').setup {}
+require('lspconfig/quick_lint_js').setup{
+    capabilities = capabilities
+}
 -- JavaScript
 
 -- TypeScript
@@ -130,11 +134,15 @@ require'lspconfig'.tsserver.setup{
 -- TypeScript
 
 -- Python
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pyright.setup{
+    capabilities = capabilities
+}
 -- Python
 
 -- Emmet
-require'lspconfig'.emmet_ls.setup{}
+require'lspconfig'.emmet_ls.setup{
+    capabilities = capabilities
+}
 -- Emmet
 
 -- CSS
@@ -170,20 +178,28 @@ require'lspconfig'.volar.setup{
 -- Vue.js
 
 -- JSON
-require'lspconfig'.jsonls.setup{}
+require'lspconfig'.jsonls.setup{
+    capabilities = capabilities
+}
 -- JSON
 
 -- Docker
-require'lspconfig'.dockerls.setup{}
+require'lspconfig'.dockerls.setup{
+    capabilities = capabilities
+}
 -- Docker
 
 -- Docker Compose
-require'lspconfig'.docker_compose_language_service.setup{}
+require'lspconfig'.docker_compose_language_service.setup{
+    capabilities = capabilities
+}
 -- Docker Compose
 
 -- PHP
 -- require'lspconfig'.phpactor.setup{} 
-require'lspconfig'.intelephense.setup{}
+require'lspconfig'.intelephense.setup{
+    capabilities = capabilities
+}
 -- PHP
 
 -- Angular
@@ -246,35 +262,6 @@ vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
 vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-
-local status, null_ls = pcall(require, "null-ls")
-if (not status) then return end
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
-    }),
-    null_ls.builtins.diagnostics.fish
-  }
-})
-
-local status, prettier = pcall(require, "prettier")
-if (not status) then return end
-
-prettier.setup {
-  bin = 'prettierd',
-  filetypes = {
-    "css",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "scss",
-    "less"
-  }
-}
 
 -- GIT
 require('gitsigns').setup {}
