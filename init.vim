@@ -1,75 +1,36 @@
 call plug#begin("~/.vim/plugged")
   " Plugin Section
-  Plug 'neovim/nvim-lspconfig'
   Plug 'dracula/vim' 
-  Plug 'preservim/nerdtree'
+  Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
-  " Plug 'nvim-tree/nvim-web-devicons'
-  " Plug 'pangloss/vim-javascript'
-  " Plug 'peitalin/vim-jsx-typescript'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'pangloss/vim-javascript'
+  Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
-  " Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  " Plug 'mattn/emmet-vim'
+  Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'editorconfig/editorconfig-vim'
-  " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'szw/vim-maximizer'
-
-  "
-  " nvim-cmp plugins
-  "
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-cmdline'
-  Plug 'hrsh7th/nvim-cmp'
-
-  " For vsnip users.
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
-  Plug 'hrsh7th/vim-vsnip-integ'
-
-  " For luasnip users.
-  Plug 'L3MON4D3/LuaSnip'
-  Plug 'saadparwaiz1/cmp_luasnip'
-
-  " For ultisnips users.
-  Plug 'SirVer/ultisnips'
-  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-
-  " For snippy users.
-  Plug 'dcampos/nvim-snippy'
-  Plug 'dcampos/cmp-snippy'
-  "
-  " nvim-cmp plugins
-  "
-  Plug 'quick-lint/quick-lint-js', {'rtp': 'plugin/vim/quick-lint-js.vim', 'tag': '2.16.0'}
-  " Plug 'posva/vim-vuePlug'
-
-  Plug 'vim-crystal/vim-crystal'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvimdev/lspsaga.nvim'
-  "Plug 'jose-elias-alvarez/null-ls.nvim'
-  "Plug 'MunifTanjim/prettier.nvim'
-  Plug 'dinhhuy258/git.nvim'
-  Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 "Config Section
 
 if (has("termguicolors"))
  set termguicolors
-endif 
+endif
+
+lua require'colorizer'.setup()
 
 filetype plugin indent on
 filetype on
@@ -132,6 +93,12 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 set cursorline
 
+let g:vim_jsx_pretty_highlight_close_tag = 0
+" let g:typescript_indent_disable = 1
+" let g:typescript_compiler_binary = 'tsc'
+" let g:typescript_compiler_options = ''
+" let g:typescript_ignore_browserwords = 0
+
 " onedark theme configuration
 " let g:onedark_terminal_italics=1
 
@@ -147,6 +114,7 @@ set cursorline
 colorscheme dracula
 
 let g:airline_theme='dracula'
+" lua require('lspconfig')
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
@@ -155,10 +123,84 @@ else
   set signcolumn=yes
 endif
 
+""""" coc.nvim configuration
+"""""
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+""""" coc.nvim configuration
+"""""
+
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
+let g:coc_global_extensions = [
+    \'coc-emmet', 
+    \'coc-html', 
+    \'coc-json', 
+    \'coc-prettier', 
+    \'coc-tsserver', 
+    \'coc-css', 
+    \'coc-solargraph', 
+    \'coc-sql',
+    \'coc-pyright',
+    \'@yaegassy/coc-volar',
+    \'@yaegassy/coc-typescript-vue-plugin',
+    \'coc-phpls',
+    \'coc-git'
+    \]
 
 " VIM Go Configuration
 let g:go_highlight_types = 1
@@ -183,19 +225,13 @@ let php_parent_error_open = 1
 
 " JavaScript configuration
 let g:javascript_plugin_flow = 1
-let g:javascript_plugin_jsdoc = 1
 
 " Plaintext Configuration
 "
 let g:plaintex_delimiters = 1
 
-let g:vim_jsx_pretty_highlight_close_tag = 0
-let g:typescript_indent_disable = 1
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-
 " Emmet configuration
-" let g:user_emmet_leader_key='<C-C>'
+let g:user_emmet_leader_key='<C-C>'
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -203,7 +239,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 autocmd FileType apache setlocal commentstring=#\ %s
-
 
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -253,5 +288,3 @@ hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
 
 " maximize current split or return to previous
 noremap <C-w>m :MaximizerToggle<CR>
-
-lua require('init')
