@@ -24,6 +24,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'szw/vim-maximizer'
   Plug 'nvimdev/lspsaga.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'lbrayner/vim-rzip'
 call plug#end()
 
 "Config Section
@@ -101,9 +102,6 @@ let g:vim_jsx_pretty_highlight_close_tag = 0
 " let g:typescript_compiler_options = ''
 " let g:typescript_ignore_browserwords = 0
 
-" onedark theme configuration
-" let g:onedark_terminal_italics=1
-
 " dracula theme configuration
 "
 " let g:dracula_bold = 1
@@ -111,7 +109,7 @@ let g:vim_jsx_pretty_highlight_close_tag = 0
 " let g:dracula_underline = 1
 " let g:dracula_undercurl = 1
 " let g:dracula_inverse = 1
-" let g:dracula_colorterm = 1
+let g:dracula_colorterm = 1
 
 colorscheme dracula
 
@@ -205,6 +203,8 @@ let g:coc_global_extensions = [
     \]
 
 " VIM Go Configuration
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1

@@ -1,3 +1,4 @@
 {
+	"tsserver.log": "verbose",
 	"tsserver.useLocalTsdk": true
 }
