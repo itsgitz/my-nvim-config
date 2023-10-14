@@ -22,6 +22,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'szw/vim-maximizer'
+  Plug 'nvimdev/lspsaga.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "Config Section
