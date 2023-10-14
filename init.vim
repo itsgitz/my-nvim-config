@@ -15,7 +15,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'vim-airline/vim-airline-themes'
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
-  Plug 'editorconfig/editorconfig-vim'
+  " Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
@@ -25,6 +25,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'nvimdev/lspsaga.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'lbrayner/vim-rzip'
+  Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 call plug#end()
 
 "Config Section
@@ -34,6 +35,7 @@ if (has("termguicolors"))
 endif
 
 lua require'colorizer'.setup()
+lua require('init')
 
 filetype plugin indent on
 filetype on
@@ -190,7 +192,7 @@ let g:coc_global_extensions = [
     \'coc-emmet', 
     \'coc-html', 
     \'coc-json', 
-    \'coc-prettier', 
+    \'coc-prettier',
     \'coc-tsserver', 
     \'coc-css', 
     \'coc-solargraph', 
@@ -199,6 +201,7 @@ let g:coc_global_extensions = [
     \'@yaegassy/coc-volar',
     \'@yaegassy/coc-typescript-vue-plugin',
     \'coc-phpls',
+    \'coc-php-cs-fixer',
     \'coc-git'
     \]
 
