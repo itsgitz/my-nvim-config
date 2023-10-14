@@ -9,17 +9,6 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
--- local on_attach = function(client, bufnr)
---   -- format on save
---   if client.server_capabilities.documentFormattingProvider then
---     vim.api.nvim_create_autocmd("BufWritePre", {
---       group = vim.api.nvim_create_augroup("Format", { clear = true }),
---       buffer = bufnr,
---       callback = function() vim.lsp.buf.formatting_seq_sync() end
---     })
---   end
--- end
-
 vim.lsp.buf.hover()
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
@@ -28,8 +17,8 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            require('luasnip').lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {
@@ -41,14 +30,11 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ 
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true 
-        }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        -- ['<C-Space>'] = cmp.mapping.confirm {
-        --     behavior = cmp.ConfirmBehavior.Insert,
-        --     select = true,
-        -- },
+        -- ['<CR>'] = cmp.mapping.confirm({}), 
+        ['<C-Space>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+        },
         ['<Tab>'] = function(fallback)
             if not cmp.select_next_item() then
                 if vim.bo.buftype ~= 'prompt' and has_words_before() then
@@ -73,8 +59,10 @@ cmp.setup({
         { name = 'nvim_lsp', keyword_length = 1 },
         { name = 'vsnip' }, -- For vsnip users.
         { name = 'buffer', keyword_length = 3 },
-        { name = 'luasnip', keyword_length = 2 },
-    })
+        -- { name = 'luasnip', keyword_length = 2 },
+    }, {
+            { name = 'buffer' }
+        })
 })
 
 -- Set configuration for specific filetype.
@@ -136,7 +124,9 @@ require('lspconfig/quick_lint_js').setup {}
 -- JavaScript
 
 -- TypeScript
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.tsserver.setup{
+    capabilities = capabilities
+}
 -- TypeScript
 
 -- Python
@@ -197,7 +187,7 @@ require'lspconfig'.intelephense.setup{}
 -- PHP
 
 -- Angular
-require'lspconfig'.angularls.setup{}
+-- require'lspconfig'.angularls.setup{}
 -- Angular
 
 -- HTML
@@ -228,7 +218,9 @@ ts.setup {
     "swift",
     "css",
     "html",
-    "lua"
+    "lua",
+    "markdown",
+    "markdown_inline"
   },
   autotag = {
     enable = true,
@@ -254,3 +246,47 @@ vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
 vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+
+local status, null_ls = pcall(require, "null-ls")
+if (not status) then return end
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.diagnostics.eslint_d.with({
+      diagnostics_format = '[eslint] #{m}\n(#{c})'
+    }),
+    null_ls.builtins.diagnostics.fish
+  }
+})
+
+local status, prettier = pcall(require, "prettier")
+if (not status) then return end
+
+prettier.setup {
+  bin = 'prettierd',
+  filetypes = {
+    "css",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "scss",
+    "less"
+  }
+}
+
+-- GIT
+require('gitsigns').setup {}
+local status, git = pcall(require, "git")
+if (not status) then return end
+
+git.setup({
+  keymaps = {
+    -- Open blame window
+    blame = "<Leader>gb",
+    -- Open file/folder in git repository
+    browse = "<Leader>go",
+  }
+})
+-- GIT
