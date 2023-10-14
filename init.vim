@@ -4,11 +4,11 @@ call plug#begin("~/.vim/plugged")
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'pangloss/vim-javascript'
-  Plug 'peitalin/vim-jsx-typescript'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  " Plug 'pangloss/vim-javascript'
+  " Plug 'peitalin/vim-jsx-typescript'
+  " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
-  Plug 'maxmellon/vim-jsx-pretty'
+  " Plug 'maxmellon/vim-jsx-pretty'
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
