@@ -1,8 +1,10 @@
 {
+	"tsserver.log": "verbose",
+	"tsserver.trace.server": "verbose",
 	"tsserver.useLocalTsdk": true,
 	"prettier.tabWidth": 4,
 	"php-cs-fixer.activateTool": "pint",
 	"[php]": {
 		"coc.preferences.formatOnSave": true
-	},
+	}
 }

@@ -6,16 +6,16 @@ call plug#begin("~/.vim/plugged")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'pangloss/vim-javascript'
   Plug 'peitalin/vim-jsx-typescript'
-  " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
-  " Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'mattn/emmet-vim'
   Plug 'ekalinin/Dockerfile.vim'
-  " Plug 'editorconfig/editorconfig-vim'
+  Plug 'editorconfig/editorconfig-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
@@ -100,9 +100,9 @@ set cursorline
 
 let g:vim_jsx_pretty_highlight_close_tag = 0
 " let g:typescript_indent_disable = 1
-" let g:typescript_compiler_binary = 'tsc'
-" let g:typescript_compiler_options = ''
-" let g:typescript_ignore_browserwords = 0
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+let g:typescript_ignore_browserwords = 0
 
 " dracula theme configuration
 "
@@ -198,10 +198,11 @@ let g:coc_global_extensions = [
     \'coc-solargraph', 
     \'coc-sql',
     \'coc-pyright',
-    \'@yaegassy/coc-volar',
-    \'@yaegassy/coc-typescript-vue-plugin',
     \'coc-phpls',
     \'coc-php-cs-fixer',
+    \'coc-eslint',
+    \'coc-vetur',
+    \'coc-angular'
     \]
 
 " VIM Go Configuration
