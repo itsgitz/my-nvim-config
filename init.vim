@@ -202,7 +202,6 @@ let g:coc_global_extensions = [
     \'@yaegassy/coc-typescript-vue-plugin',
     \'coc-phpls',
     \'coc-php-cs-fixer',
-    \'coc-git'
     \]
 
 " VIM Go Configuration
