@@ -201,7 +201,6 @@ let g:coc_global_extensions = [
     \'coc-phpls',
     \'coc-php-cs-fixer',
     \'coc-eslint',
-    \'coc-vetur',
     \'coc-angular'
     \]
 

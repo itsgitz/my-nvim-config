@@ -1,6 +1,5 @@
 {
-	"tsserver.log": "verbose",
-	"tsserver.trace.server": "verbose",
+	"tsserver.experimental.enableProjectDiagnostics": false,
 	"tsserver.useLocalTsdk": true,
 	"prettier.tabWidth": 4,
 	"php-cs-fixer.activateTool": "pint",
