@@ -1,4 +1,5 @@
 {
+	"tsserver.log": "verbose",
 	"tsserver.experimental.enableProjectDiagnostics": false,
 	"tsserver.useLocalTsdk": true,
 	"prettier.tabWidth": 4,
