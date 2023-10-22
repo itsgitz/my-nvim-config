@@ -9,6 +9,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
   Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'neoclide/vim-jsx-improve'
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
@@ -44,6 +45,7 @@ syntax on
 syntax enable
 " set number relativenumber
 set number
+set mouse=
 set hidden
 set nobackup
 set nowritebackup
@@ -201,7 +203,12 @@ let g:coc_global_extensions = [
     \'coc-phpls',
     \'coc-php-cs-fixer',
     \'coc-eslint',
-    \'coc-angular'
+    \'coc-angular',
+    \'coc-eslint',
+    \'@yaegassy/coc-volar',
+    \'@yaegassy/coc-volar-tools',
+    \'@yaegassy/coc-laravel',
+    \'coc-blade'
     \]
 
 " VIM Go Configuration
