@@ -74,6 +74,7 @@ set softtabstop=4
 set expandtab
 set splitbelow
 set splitright
+set shortmess=Ot
 
 au FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 au FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
