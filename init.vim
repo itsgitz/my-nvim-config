@@ -209,7 +209,8 @@ let g:coc_global_extensions = [
     \'@yaegassy/coc-volar',
     \'@yaegassy/coc-volar-tools',
     \'@yaegassy/coc-laravel',
-    \'coc-blade'
+    \'coc-blade',
+    \'coc-rls'
     \]
 
 " VIM Go Configuration
