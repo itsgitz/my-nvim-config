@@ -210,7 +210,7 @@ let g:coc_global_extensions = [
     \'@yaegassy/coc-volar-tools',
     \'@yaegassy/coc-laravel',
     \'coc-blade',
-    \'coc-rls'
+    \'coc-rust-analyzer'
     \]
 
 " VIM Go Configuration
