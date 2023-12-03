@@ -6,5 +6,12 @@
 	"php-cs-fixer.activateTool": "pint",
 	"[php]": {
 		"coc.preferences.formatOnSave": true
+	},
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"filetypes": ["go"]
+		}
 	}
 }
