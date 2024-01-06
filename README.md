@@ -1,3 +1,4 @@
+![My NVIM Configuration](/docs/img/my-nvim.png)
 # My NVIM Configuration for Plugins and Settings
 1. NVIM initial configuration (main configuration)
 
