@@ -27,6 +27,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'lbrayner/vim-rzip'
   Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+  Plug 'wuelnerdotexe/vim-astro'
 call plug#end()
 
 "Config Section
