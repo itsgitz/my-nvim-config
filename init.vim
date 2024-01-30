@@ -68,7 +68,7 @@ set smarttab
 set ai
 set si
 set wrap
-set foldmethod=indent
+set foldmethod=syntax
 
 set tabstop=4
 set shiftwidth=4
