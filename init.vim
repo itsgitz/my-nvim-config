@@ -24,7 +24,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'szw/vim-maximizer'
   Plug 'nvimdev/lspsaga.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'lbrayner/vim-rzip'
   Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
   Plug 'wuelnerdotexe/vim-astro'
