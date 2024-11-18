@@ -28,6 +28,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'lbrayner/vim-rzip'
   Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
   Plug 'wuelnerdotexe/vim-astro'
+  Plug 'prisma/vim-prisma'
 call plug#end()
 
 "Config Section
