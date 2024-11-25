@@ -29,6 +29,10 @@ call plug#begin("~/.vim/plugged")
   Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
   Plug 'wuelnerdotexe/vim-astro'
   Plug 'prisma/vim-prisma'
+  Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+  \}
 call plug#end()
 
 "Config Section
