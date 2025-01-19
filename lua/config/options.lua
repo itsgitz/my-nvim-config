@@ -4,3 +4,4 @@
 
 -- Disable mouse
 vim.opt.mouse = ""
+vim.opt.rnu = false
